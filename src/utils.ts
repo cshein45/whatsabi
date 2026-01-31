@@ -36,16 +36,16 @@ export function bytesToHex(bytes: Uint8Array | Number | bigint, padToBytes?: num
 }
 
 
-import { keccak_256 } from '@noble/hashes/sha3';
+import { keccak_256 } from '@noble/hashes/sha3.js';
 
 export function keccak256(data: Uint8Array | string): string {
   if (typeof data !== "string") {
     return bytesToHex(keccak_256(data));
   }
   if (data.startsWith("0x")) {
-    data = hexToBytes(data.slice(2));
+    return bytesToHex(keccak_256(hexToBytes(data.slice(2))));
   }
-  return bytesToHex(keccak_256(data));
+  return bytesToHex(keccak_256(hexToBytes(data)));
 }
 
 

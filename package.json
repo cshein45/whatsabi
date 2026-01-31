@@ -40,7 +40,7 @@
     "ox": "^0.9.17"
   },
   "peerDependencies": {
-    "@noble/hashes": "^1"
+    "@noble/hashes": "^2.0.1"
   },
   "devDependencies": {
     "@size-limit/esbuild-why": "^8.2.6",
